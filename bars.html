@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            border: 1px solid pink;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+        }
+
+        article {
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            height: 400px;
+        }
+
+        article div {
+            width: 50px;
+            height: 300px;
+            background-color: red;
+            border: 2px solid green;
+        }
+
+        section {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: flex-end;
+            width: 100%;
+            height: 100px;
+        }
+
+        section div {
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        button {
+            width: 155px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: pink;
+        }
+
+        .class0 {
+            height: 2px;
+        }
+
+        .class1 {
+            height: 10px;
+        }
+
+        .class2 {
+            height: 350px;
+        }
+
+        .class3 {
+            height: 100px;
+        }
+
+        .class4 {
+            height: 350px;
+        }
+
+        .class5 {
+            height: 200px;
+        }
+    </style>
+    <title>Bars</title>
+</head>
+
+<body>
+    <main>
+        <nav>
+            <button onclick="countMe('a')">A</button>
+            <button onclick="countMe('b')">B</button>
+            <button onclick="countMe('c')">C</button>
+            <button onclick="countMe('d')">D</button>
+        </nav>
+        <section>
+            <div>A</div>
+            <div>B</div>
+            <div>C</div>
+            <div>D</div>
+        </section>
+        <article>
+            <div class='class0'></div>
+            <div class='class0'></div>
+            <div class='class0'></div>
+            <div class='class0'></div>
+        </article>
+        <script>
+            let articleDiv = document.querySelectorAll('article div');
+            let numberOfRequest = 0;
+            let countA = 0, countB = 0, countC = 0, countD = 0;
+            function countMe(item) {
+                if (numberOfRequest === 0) {
+                    if (item === "a") {
+                        countA++;
+                    } else if (item === "b") {
+                        console.log('hit B')
+                        articleDiv[1].classList.add('class2')
+                    }
+                    else {
+                        alert('you have already voted!!!')
+                    }
+                    console.log(`A: ${countA} B: ${countB} C: ${countC} D ${countD}`)
+
+                }
+            }
+        </script>
+    </main>
+
+</body>
+
+</html>
