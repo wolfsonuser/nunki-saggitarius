@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="questions-content.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav form,
+        section {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: 90px;
+        }
+        article {
+            display:flex;
+            justify-content: space-between;
+        }
+        section div {
+            width: 150px;
+            height: 2px;
+            background-color: red;
+        }
+
+        article div {
+            border: 3px solid black;
+        }
+
+        input[type='button'] {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: lightgreen;
+            font-size: 3em;
+        }
+
+        input[type='button']:hover {
+            background-color: black;
+            color: white;
+            font-size: 4em;
+        }
+
+        .class0,
+        .class1,
+        .class2,
+        .class3,
+        .class4 {
+            background-color: red;
+            border: 5px solid white;
+        }
+
+        .class0 {
+            height: 100px;
+        }
+
+        .class1 {
+            height: 200px;
+        }
+
+        .class2 {
+            height: 300px;
+        }
+
+        .class3 {
+            height: 400px;
+        }
+
+        .class4 {
+            height: 500px;
+        }
+    </style>
+    <title>Bars</title>
+</head>
+
+<body>
+
+    <nav>
+        <form action="#">
+            <input type='button' value='A' onclick="countMe('a')" />
+            <input type='button' value='B' onclick="countMe('b')" />
+            <input type='button' value='C' onclick="countMe('c')" />
+            <input type='button' value='D' onclick="countMe('d')" />
+        </form>
+    </nav>
+    <article>
+        <div id='aaa'></div>
+        <div id='bbb'></div>
+        <div id='ccc'></div>
+        <div id='ddd'></div>
+    </article>
+    <section>
+        <div class='class5'></div>
+        <div class='class5'></div>
+        <div class='class5'></div>
+        <div class='class5'></div>
+    </section>
+    <script>
+        let sectionDiv = document.querySelectorAll('section div');
+        let articleDiv = document.querySelectorAll('article div');
+        let numberOfRequest = 0;
+        let countA = 0, countB = 0, countC = 0, countD = 0;
+        let hasSelected = false;
+
+        function fillContent() {
+            for (i = 0; i < articleDiv.length; i++) {
+                articleDiv[i].innerHTML = content[i];
+            }
+        }
+        fillContent();
+        function countMe(item) {
+            if (!hasSelected) {
+                if (item === "a") {
+                    switch (countA) {
+                        case 0:
+                            sectionDiv[0].classList.add('class0');
+                            break;
+                        case 1:
+                            sectionDiv[0].classList.add('class1');
+                            break;
+                        case 2:
+                            sectionDiv[0].classList.add('class2');
+                            break;
+                        case 3:
+                            sectionDiv[0].classList.add('class3');
+                            break;
+                    }
+                    countA++;
+                    //hasSelected = true;
+                } else if (item === "b") {
+                    switch (countB) {
+                        case 0:
+                            sectionDiv[1].classList.add('class0');
+                            break;
+                        case 1:
+                            sectionDiv[1].classList.add('class1');
+                            break;
+                        case 2:
+                            sectionDiv[1].classList.add('class2');
+                            break;
+                        case 3:
+                            sectionDiv[1].classList.add('class3');
+                            break;
+                    }
+                    countB++;
+                    //hasSelected = true;
+                } else if (item === "c") {
+                    switch (countC) {
+                        case 0:
+                            sectionDiv[2].classList.add('class0');
+                            break;
+                        case 1:
+                            sectionDiv[2].classList.add('class1');
+                            break;
+                        case 2:
+                            sectionDiv[2].classList.add('class2');
+                            break;
+                        case 3:
+                            sectionDiv[2].classList.add('class3');
+                            break;
+                    }
+
+                    countC++;
+                    // hasSelected = true;
+                } else if (item === "d") {
+                    switch (countD) {
+                        case 0:
+                            sectionDiv[3].classList.add('class0');
+                            break;
+                        case 1:
+                            sectionDiv[3].classList.add('class1');
+                            break;
+                        case 2:
+                            sectionDiv[3].classList.add('class2');
+                            break;
+                        case 3:
+                            sectionDiv[3].classList.add('class3');
+                            break;
+                    }
+
+                    countD++;
+                    //hasSelected = true;
+                }
+                else {
+                    alert('you have already voted!!!')
+                }
+
+
+                console.log(`A: ${countA} B: ${countB} C: ${countC} D ${countD}`)
+            }
+        }
+    </script>
+
+</body>
+
+</html>
