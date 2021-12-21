@@ -23,3 +23,23 @@
 1. five CSS class with different heights
 1. Question content coming from questions-content.js file
 1. Only for static display, meaning click events must be posted and final figure refreshed when students vote only one time (the firt time).
+
+## 12.21.2021
+
+1. OBSERVATIONS: 
+  1. route /users post and get. Render pug templates. 
+  1. script in pug template read as src source, output in chrome console.
+  1. Button onclick(this) shows the full input tag <input type value onclick='myFunc()'>
+  1. when /users is refreshed, server console shows only get 
+  1. when using postman to post, it show in server console as
+  1. [Object: null prototype] { name: 'january' }
+  1. When /users post method used and send response as string result 200
+  1. when using render list.pug page resuls is 500
+1. PROBLEMS:
+  1. unable to post from the form
+  1. post only using postman
+  1. run script as get? or run script in server?
+  1. Check the movie database to see how it deals with post request: fetch?
+  1. is it fetch from within server? I think not, but.....
+  1. Post request from client side and from pug - server side.
+  

@@ -1,0 +1,22 @@
+extends layout 
+block content
+  h1= title
+  p Welcome to #{title}
+  nav
+    form(action="/", method="post")
+        input(type="button" value='A' onclick='myFunc(this)')
+        input(type="button" value='B' onclick='myFunc(this)')
+        input(type="button" value='C' onclick='myFunc("c")')
+        input(type="button" value='D' onclick='myFunc("d")')
+  article 
+    div A
+    div B
+    div C
+    div D 
+  section 
+    .class0 
+    .class0 
+    .class0 
+    .class0 
+  script(src="./javascripts/test.js") 
+    
