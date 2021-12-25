@@ -3,11 +3,12 @@ block content
   h1= title
   p Welcome to #{title}
   nav
-    form(action="/", method="post")
-        input(type="button" value='A' onclick='myFunc(this)')
-        input(type="button" value='B' onclick='myFunc(this)')
-        input(type="button" value='C' onclick='myFunc("c")')
-        input(type="button" value='D' onclick='myFunc("d")')
+    form(action="/users", method="get")
+        input(type="button" value='A' name='a' onclick='countMe("a")')
+        input(type="button" value='B' name='b' onclick='countMe("b")')
+        input(type="button" value='C' name='c' onclick='countMe("c")')
+        input(type="button" value='D' name='d' onclick='countMe("d")')
+        input(type='submit' value='submit'  )
   article 
     div A
     div B
@@ -18,5 +19,9 @@ block content
     .class0 
     .class0 
     .class0 
+  p Number of requests:  #{item.length}
+  ol 
+    for i in item 
+        li= i
   script(src="./javascripts/test.js") 
     

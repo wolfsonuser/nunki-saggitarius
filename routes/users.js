@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-let online = [];
-let remoteIP = [];
+let online = ['1.1.1.1'];
+let remoteIP = ['2.2.2.2'];
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
   remoteIP.push(result);
   console.log(`online length ${online.length} `)
   //res.render('list', { title: 'your IP address is: ', item: listItems(remoteIP) });
-  res.render('formInput', {title: 'Select Option A,B,C or D'})
+  res.render('formInput', {title: 'Select Option A,B,C or D', item: listItems(remoteIP)})
 })
 function getIp(request) {
   const { headers, connection, socket } = request
@@ -33,10 +33,10 @@ function listItems(ids) {
 } 
 router.post('/', function(req, res){
   console.log('inside post route')
-  console.log(req.body);
+  console.log(req.body.name);
   //console.log(req.navigator);
   //res.send("post route was hit!!");
-  res.render('list', {title: 'Number of connects ', remoteIP: listItems(remoteIP)}) 
+  res.render('list', {title: 'Number of connects ', item: listItems(remoteIP)}) 
 });
 
 module.exports = router;
