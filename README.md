@@ -42,4 +42,15 @@
   1. Check the movie database to see how it deals with post request: fetch?
   1. is it fetch from within server? I think not, but.....
   1. Post request from client side and from pug - server side.
+
+## December 25, 2021
+
+### Get, Post working with global online, remoteIP
+1. online: name, anyothervariable in post route inside req.body
+1. remoteIP: collects the client's IP add
+1. res.redirect syntax now is (200, url), and req.body goes into datastructure whatever
+1. Now that the flow is verified, post has been tested from postman, curl, and form, pending to change the options from buttons to div maybe, or find a way to record the button selection to be sent with the req.body. The button submit from the form is now, refresh-the-page since it uses get method. 
+1. add a post button? 
+1. Clean pug templates.
+1. Work on the logic to accept only one submission but keep counting the number of times that client clicks on refresh.
   
