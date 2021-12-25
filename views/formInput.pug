@@ -8,7 +8,7 @@ block content
         input(type="button" value='B' name='b' onclick='countMe("b")')
         input(type="button" value='C' name='c' onclick='countMe("c")')
         input(type="button" value='D' name='d' onclick='countMe("d")')
-        input(type='submit' value='submit'  )
+        input(type='submit' value='REFRESH'  )
   article 
     div A
     div B
@@ -20,6 +20,10 @@ block content
     .class0 
     .class0 
   p Number of requests:  #{item.length}
+  p ipaddress #{ipaddress}
+  ul
+    for i in online
+      li= i
   ol 
     for i in item 
         li= i

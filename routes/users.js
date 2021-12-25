@@ -12,7 +12,8 @@ router.get('/', function(req, res, next) {
   remoteIP.push(result);
   console.log(`online length ${online.length} `)
   //res.render('list', { title: 'your IP address is: ', item: listItems(remoteIP) });
-  res.render('formInput', {title: 'Select Option A,B,C or D', item: listItems(remoteIP)})
+  res.render('formInput', {title: 'Select Option A,B,C or D', item: listItems(remoteIP),
+                online: online})
 })
 function getIp(request) {
   const { headers, connection, socket } = request
@@ -33,10 +34,14 @@ function listItems(ids) {
 } 
 router.post('/', function(req, res){
   console.log('inside post route')
-  console.log(req.body.name);
+  console.log(req.body);
+  console.log(req.body.name)
+  console.log(req.body.ipaddress)
   //console.log(req.navigator);
   //res.send("post route was hit!!");
-  res.render('list', {title: 'Number of connects ', item: listItems(remoteIP)}) 
+  //res.render('list', {title: 'Number of connects ', item: listItems(remoteIP)}) 
+  online.push(req.body.name)
+  res.redirect(200, 'formInput');
 });
 
 module.exports = router;
