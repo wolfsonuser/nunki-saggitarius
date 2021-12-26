@@ -54,6 +54,8 @@ router.post('/simple', function(req, res) {
   console.log(req.body);
   fakeDb.push(req.body.textInput);
   console.log("adding... added: " + req.body.textInput)
+  fakeDb.push(req.body.name);
+  fakeDb.push(req.body.email);
   res.send("/users/simple/ post route was hit!!!");
 })
 
