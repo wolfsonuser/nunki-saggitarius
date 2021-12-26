@@ -4,11 +4,12 @@ block content
   p Welcome to #{title}
   nav
     form(action="/users", method="get")
+        input(type='submit' value='REFRESH'  )
+    form(action="/users", method="post" onsubmit="alert('submitting')")
         input(type="button" value='A' name='a' onclick='countMe("a")')
         input(type="button" value='B' name='b' onclick='countMe("b")')
         input(type="button" value='C' name='c' onclick='countMe("c")')
         input(type="button" value='D' name='d' onclick='countMe("d")')
-        input(type='submit' value='REFRESH'  )
   article 
     div A
     div B

@@ -1,8 +1,17 @@
 var express = require('express');
 var router = express.Router();
 
-let online = ['1.1.1.1'];
+let online = ['online'];
 let remoteIP = ['2.2.2.2'];
+let fakeDb = ["Nelson"];
+
+// display fakeDb
+function displayFakeDb (fakeDb) {
+ fakeDb.forEach(element => {
+   console.log(element)
+   return element;
+ });
+}
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -11,7 +20,6 @@ router.get('/', function(req, res, next) {
   let result = getIp(req);
   remoteIP.push(result);
   console.log(`online length ${online.length} `)
-  //res.render('list', { title: 'your IP address is: ', item: listItems(remoteIP) });
   res.render('formInput', {title: 'Select Option A,B,C or D', item: listItems(remoteIP),
                 online: online})
 })
@@ -34,14 +42,19 @@ function listItems(ids) {
 } 
 router.post('/', function(req, res){
   console.log('inside post route')
-  console.log(req.body);
-  console.log(req.body.name)
-  console.log(req.body.ipaddress)
-  //console.log(req.navigator);
-  //res.send("post route was hit!!");
-  //res.render('list', {title: 'Number of connects ', item: listItems(remoteIP)}) 
   online.push(req.body.name)
+  online.push(req.body.a)
   res.redirect(200, 'formInput');
 });
+
+router.get('/simple', function (req, res) {
+  res.render('list', { fakeDb: (fakeDb)})
+})
+router.post('/simple', function(req, res) {
+  console.log(req.body);
+  fakeDb.push(req.body.textInput);
+  console.log("adding... added: " + req.body.textInput)
+  res.send("/users/simple/ post route was hit!!!");
+})
 
 module.exports = router;

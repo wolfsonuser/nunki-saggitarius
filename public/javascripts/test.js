@@ -92,5 +92,6 @@ function countMe(item) {
 
 
         console.log(`A: ${countA} B: ${countB} C: ${countC} D ${countD}`)
+	    return 'this is test.js';
     }
 }
