@@ -8,7 +8,7 @@ let fakeDb = ["Nelson"];
 // display fakeDb
 function displayFakeDb (fakeDb) {
  fakeDb.forEach(element => {
-   console.log(element)
+   //console.log(element)
    return element;
  });
 }
@@ -40,16 +40,33 @@ function listItems(ids) {
     return  id;
   })
 } 
+function searchTerm(query) {
+  let i = query.textInput;
+  if (query.textInput != '') { 
+    if (i === 'Nelson') { console.log("Nelson found!!")}
+    fakeDb.map( (item, i) => {
+      console.log(item);
+      if (item.indexOf(i)) { console.log(' not found ' + item)}
+      else {
+        console.log('found ' + item);
+        return i;
+      };
+
+    })
+  }
+  return -1;
+}
 router.post('/', function(req, res){
   console.log('inside post route')
   online.push(req.body.name)
-  online.push(req.body.a)
   res.redirect(200, 'formInput');
 });
 
 router.get('/simple', function (req, res) {
-  res.render('list', { fakeDb: (fakeDb)})
+  let index = searchTerm(req.query); console.log(index + " --########")
+  res.render('list', { fakeDb: (fakeDb), index:index})
 })
+
 router.post('/simple', function(req, res) {
   console.log(req.body);
   fakeDb.push(req.body.textInput);

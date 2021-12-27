@@ -4,7 +4,9 @@ body {
   display: flex;
   flex-direction: column;
 }
-nav form,
+nav form {
+    display:block;
+}
 section {
     display: flex;
     justify-content: space-around;
@@ -60,4 +62,11 @@ height: 500px;
 }
 li {
     background-color:#aaa;
+}
+.second-div, .first-div {
+    background-color: #fff;
+    border: 2px solid blue;
+}
+.unique {
+    background-color: red;
 }

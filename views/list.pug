@@ -3,34 +3,32 @@
 block content
   link(rel='stylesheet', href='../stylesheets/style.css')
   h1= title
-  p Welcome to #{title}
+  p Welcome to #{title} and #{index}
   ol 
-    for i in fakeDb 
-        li= i
+    each item, i  in fakeDb 
+      if i === index
+        li.unique= item
+      else
+        li= item + " " + i
   nav
     form(action="/users/simple", method="get")
-      input(type='text' name='textInput' placeholder='input text' id='textInput')
-      input(type='submit' value='REFRESH'  )
+      input(type='text' name='textInput' placeholder='input search term' id='textInput')
+      input(type='submit' value='SEARCH TERMS'  )
 
     form(action="/users/simple", method="post" onsubmit="alert('submitting')")
-      input(type='text' name='textInput' placeholder='input text' id='textInput')
-      input(type='submit' value='SUBMIT')
-
-  nav
-    form.form-example(action="/users/simple", method="post" )
-      .form-example
-        label(for='name') Enter your name: 
-        input#name(type='text' name='name' required='')
-      .form-example
-        label(for='email') Enter your email: 
-        input#email(type='email' name='email' required='')
-      .form-example
-        input(type='submit' value='Subscribe!')
-
-  nav
-    form(action="/users/simple", method='post')
-      label(for='name') Name:
-      input#name(type='text' name='name')
-      label(for='email') Email:
-      input#email(type='email' name='email')
-      input(type='submit' value='SUBMIT')
+      input(type='text' name='textInput' placeholder='add text' id='textInput')
+      input(type='submit' value='ADD ITEMS')
+      .first-div
+        .form-example
+          label(for='name') Enter your name: 
+          input#name(type='text' name='name' required='')
+        .form-example
+          label(for='email') Enter your email: 
+          input#email(type='email' name='email' required='')
+      .second-div
+        .form-example
+          label(for='name') Enter your name:
+          input#name(type='text' name='name')
+        .form-example
+          label(for='email') Enter your email:
+          input#email(type='email' name='email')
