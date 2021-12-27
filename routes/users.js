@@ -41,20 +41,21 @@ function listItems(ids) {
   })
 } 
 function searchTerm(query) {
-  let i = query.textInput;
+  let result = -55;
+  let input = query.textInput;
   if (query.textInput != '') { 
-    if (i === 'Nelson') { console.log("Nelson found!!")}
-    fakeDb.map( (item, i) => {
-      console.log(item);
-      if (item.indexOf(i)) { console.log(' not found ' + item)}
+    if (input === 'Nelson') { console.log("Nelson found!!")}
+    fakeDb.map( (item, index) => {
+      //console.log(item);
+      if (item.indexOf(input) != 0) { console.log(index + ' not found ' + item)}
       else {
-        console.log('found ' + item);
-        return i;
+        console.log(index + 'found ' + item);
+        result = index;
       };
 
     })
   }
-  return -1;
+  return result;
 }
 router.post('/', function(req, res){
   console.log('inside post route')
