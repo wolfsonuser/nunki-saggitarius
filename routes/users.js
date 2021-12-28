@@ -76,5 +76,8 @@ router.post('/simple', function(req, res) {
   fakeDb.push(req.body.email);
   res.send("/users/simple/ post route was hit!!!");
 })
-
+router.get('/radio', function(req, res) {
+//   res.send('/user/register/');
+  res.render('radio', []);
+})
 module.exports = router;

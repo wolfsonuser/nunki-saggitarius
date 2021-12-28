@@ -4,27 +4,21 @@ block content
   link(rel='stylesheet', href='../stylesheets/style.css')
   h1= title
   p Welcome to #{title} and #{index}
-  ol 
-    each item, i  in fakeDb 
-      if i === index
-        li.unique= item
-      else
-        li= item + " " + i
   nav
-    form(action="/users/simple", method="get")
+    form(action="/users/radio", method="get")
       input(type='text' name='textInput' placeholder='input search term' id='textInput')
       input(type='submit' value='SEARCH TERMS'  )
 
-    form(action="/users/simple", method="post" onsubmit="alert('submitting')")
+    form(action="/users/radio", method="post" onsubmit="alert('submitting')")
       input(type='text' name='textInput' placeholder='add text' id='textInput')
       input(type='submit' value='ADD ITEMS')
       .first-div
         .form-example
           label(for='name') Enter your name: 
-          input#name(type='text' name='name' required='')
+          input#name(type='text' name='name' )
         .form-example
           label(for='email') Enter your email: 
-          input#email(type='email' name='email' required='')
+          input#email(type='email' name='email' )
       .second-div
         .form-example
           label(for='name') Enter your name:
@@ -32,16 +26,15 @@ block content
         .form-example
           label(for='email') Enter your email:
           input#email(type='email' name='email')
+      p Select a maintenance drone:
       .my-radio
         div
-          input#aaa(type='radio' name='my-selection' value='A')
-          label(for='my-selection') A
+          input#huey(type='radio' name='drone' value='huey' checked='')
+          label(for='huey') Huey
         div
-          input#bbb(type='radio' name='my-selection' value='B')
-          label(for='my-selection') B
+          input#dewey(type='radio' name='drone' value='dewey')
+          label(for='dewey') Dewey
         div
-          input#ccc(type='radio' name='my-selection' value='C')
-          label(for='my-selection') C
-        div
-          input#ddd(type='radio' name='my-selection' value='D')
-          label(for='my-selection') D
+          input#louie(type='radio' name='drone' value='louie')
+          label(for='louie') Louie
+

@@ -53,4 +53,22 @@
 1. add a post button? 
 1. Clean pug templates.
 1. Work on the logic to accept only one submission but keep counting the number of times that client clicks on refresh.
-  
+  bars.pug
+bars.pug.bak.txt
+error.pug
+formInput.pug
+index.pug
+layout.pug
+list.pug
+radio.1.bak
+radio.pug
+register.pug
+
+## December 27, 2021
+
+1. Added radio.pug with radio button example class my-radio name= my-selection in radio.pug as well as list.pug
+1. It was not working in original example as radio.1.bak because it had a nested element, I believe the input type submit, when submitting the form with action post it automatically recognize the value of my-selection 
+1. register is from an example and it did not work because of indentation problems after copying pasting.
+1. Currently the /users/simple route renders list.pug template with fakeDb data, search box, add items box, input boxes with required, input boxes with no required, and now radio buttons active.
+
+

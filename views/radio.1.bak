@@ -1,0 +1,17 @@
+extends layout.pug
+
+block content
+  section#content
+  h2 Welcome!!
+  form(action='/users/radio', method='post')
+    label Enter battletag:
+      input(type='text', name='battletag')
+    label Platform:
+      input(type='radio', name='platform', id='battleNet', value='pc')
+        label(for='battleNet') Bettle.net
+      input(type='radio', name='platform', id='xbosLive', value='xbl')
+        label(for='xboxLive') Xbox Live
+      input(type='radio', name='platform', id='playstation', value='psn')
+        label(for='playstation') Playstation
+    label Region
+    input(type='submit' value='Submit')

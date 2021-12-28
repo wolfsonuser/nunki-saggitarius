@@ -70,3 +70,7 @@ li {
 .unique {
     background-color: red;
 }
+.my-radio{
+	display: flex;
+	justify-content: space-between;
+}
