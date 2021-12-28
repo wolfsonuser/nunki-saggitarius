@@ -60,7 +60,7 @@ function searchTerm(query) {
 router.post('/', function(req, res){
   console.log('inside post route')
   online.push(req.body.name)
-  res.redirect(200, 'formInput');
+  res.redirect(200, '/users/simple');
 });
 
 router.get('/simple', function (req, res) {

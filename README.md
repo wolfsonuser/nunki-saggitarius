@@ -91,5 +91,10 @@ register.pug
   1. Pending to modify post action to '/' from '/users', which would break also other routes. Pending to analyze, and to make a commit with name: 
   1. CANDIDATE to add different routes for different pollings
 1. Commit is "Candidates for different polling routes instead of killing the server every time a poll is carried out.
+1. in '/users' post route redirected to '/' which is routes/index.js
+1. It worked perfectly!
+1. Now change to '/simple' which means '/users/simple' get action
+1. When using the Router (uppercase R), redirection need full URL, not just the end of the route used by the Router: example, from Router user.js '/' (which really means '/users') redirect not to '/simple', but to full url even inside the users.js file: '/users/simple'.
+
 
 

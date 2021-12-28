@@ -74,4 +74,15 @@ router.get('/list', function (req, res) {
   res.render('list', { fakeDb: (fakeDb), index:index})
 })
 
+router.post('/poll1', function(req, res) {
+  res.send('hit poll1 using post');
+})
+
+router.post('/poll2', function(req, res) {
+  res.send('hit poll2 using post');
+})
+
+router.post('/poll3', function(req, res) {
+  res.send('hit poll3 using post');
+})
 module.exports = router;
