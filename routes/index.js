@@ -1,18 +1,27 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Express' });
-// });
+let online = ['January'];
+let remoteIP = ['2.2.2.2'];
+let fakeDb = ["Nelson"];
 
-let online = [];
-let remoteIP = [];
+// display fakeDb
+function displayFakeDb (fakeDb) {
+  fakeDb.forEach(element => {
+    //console.log(element)
+    return element;
+  });
+}
 
-
-/*
-*found in https://stackoverflow.com/questions/27234861/correct-way-of-getting-clients-ip-addresses-from-http-request
-*/
+router.get('/', function(req, res, next) {
+  // fire-and-forget
+  online.push(req.headers['user-agent']);
+  let result = getIp(req);
+  remoteIP.push(result);
+  console.log(`online length ${online.length} `)
+  res.render('formInput', {title: 'Select Option A,B,C or D', item: listItems(remoteIP),
+                online: online})
+})
 
 function getIp(request) {
   const { headers, connection, socket } = request
@@ -60,7 +69,9 @@ router.get('/list', function (req, res) {
   let result = getIp(req);
   remoteIP.push(result);
   console.log(`online length ${online.length} `)
-  res.render('list', { title: 'your IP address is: ', item: listItems(remoteIP) });
+  //res.render('list', { title: 'your IP address is: ', item: listItems(remoteIP) });
+  let index = searchTerm(req.query); console.log(index + " --########")
+  res.render('list', { fakeDb: (fakeDb), index:index})
 })
 
 module.exports = router;

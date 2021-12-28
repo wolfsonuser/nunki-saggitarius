@@ -71,4 +71,25 @@ register.pug
 1. register is from an example and it did not work because of indentation problems after copying pasting.
 1. Currently the /users/simple route renders list.pug template with fakeDb data, search box, add items box, input boxes with required, input boxes with no required, and now radio buttons active.
 
+## December 28,2021
+
+1. Finished with /users route: /users : renders formInput.pug
+1. /users/radio renders radio.pug
+1. /users/simple get render list.pug
+1. /users/simple post renders a message, it is not redirect
+1. /users post redirect to (200, 'formInput');
+1. Then started with root route '/' which corresponds to index.js
+1. OBS: 
+  1. '/' counts number of request independent of '/users'
+  1. '/' get renders formInput.pug
+  1. '/listip' get route works correctly
+  1. '/list' get route is not working
+  1. '/' post route is not existent yet
+  1. when post submit hit: alert posting  is OK then redirect to '/formInput' route not found because it does not exist.
+  1. in formInput.pug file the refresh button was linked to '/users' route, so by clicking it always redirected from '/' to '/users'
+  1. Changed the refresh button action to '/', possibly it will break access to this page from another route.
+  1. Pending to modify post action to '/' from '/users', which would break also other routes. Pending to analyze, and to make a commit with name: 
+  1. CANDIDATE to add different routes for different pollings
+1. Commit is "Candidates for different polling routes instead of killing the server every time a poll is carried out.
+
 

@@ -3,30 +3,33 @@ block content
   h1= title
   p Welcome to #{title}
   nav
-    form(action="/users", method="get")
+    form(action="/", method="get")
         input(type='submit' value='REFRESH'  )
     form(action="/users", method="post" onsubmit="alert('submitting')")
         input(type="button" value='A' name='a' onclick='countMe("a")')
         input(type="button" value='B' name='b' onclick='countMe("b")')
         input(type="button" value='C' name='c' onclick='countMe("c")')
         input(type="button" value='D' name='d' onclick='countMe("d")')
-  article 
-    div A
-    div B
-    div C
-    div D 
+        input(type='submit' value='SUBMIT'  )
+        .my-radio
+          div
+            input#aaa(type='radio' name='my-selection' value='A')
+            label(for='my-selection') A
+          div
+            input#bbb(type='radio' name='my-selection' value='B')
+            label(for='my-selection') B
+          div
+            input#ccc(type='radio' name='my-selection' value='C')
+            label(for='my-selection') C
+          div
+            input#ddd(type='radio' name='my-selection' value='D')
+            label(for='my-selection') D
+
   section 
     .class0 
     .class0 
     .class0 
     .class0 
   p Number of requests:  #{item.length}
-  p ipaddress #{ipaddress}
-  ul
-    for i in online
-      li= i
-  ol 
-    for i in item 
-        li= i
   script(src="./javascripts/test.js") 
     
