@@ -1,11 +1,13 @@
 extends layout 
 block content
   h1= title
-  p Welcome to #{title}
+  p selection: #{selection}  fake selection array : #{fakeSelArray}
+  p Number of requests:  #{item.length} Last request: #{lastRequest}
+  p Map Selection : #{mapSelection}
   nav
     form(action="/", method="get")
         input(type='submit' value='REFRESH'  )
-    form(action="/poll3", method="post" onsubmit="alert('submitting')")
+    form(action="/poll1", method="post"  )
         input(type="button" value='A' name='a' onclick='countMe("a")')
         input(type="button" value='B' name='b' onclick='countMe("b")')
         input(type="button" value='C' name='c' onclick='countMe("c")')
@@ -13,23 +15,87 @@ block content
         input(type='submit' value='SUBMIT'  )
         .my-radio
           div
-            input#aaa(type='radio' name='my-selection' value='A')
-            label(for='my-selection') A
+            input#aaa(type='radio' name='my_selection' value='A')
+            label(for='my_selection') A
           div
-            input#bbb(type='radio' name='my-selection' value='B')
-            label(for='my-selection') B
+            input#bbb(type='radio' name='my_selection' value='B')
+            label(for='my_selection') B
           div
-            input#ccc(type='radio' name='my-selection' value='C')
-            label(for='my-selection') C
+            input#ccc(type='radio' name='my_selection' value='C')
+            label(for='my_selection') C
           div
-            input#ddd(type='radio' name='my-selection' value='D')
-            label(for='my-selection') D
+            input#ddd(type='radio' name='my_selection' value='D')
+            label(for='my_selection') D
 
-  section 
-    .class0 
-    .class0 
-    .class0 
-    .class0 
-  p Number of requests:  #{item.length}
+  section
+    case mapSelection.get('A')
+      when 0
+      when 1
+        .class0
+      when 2
+        .class1
+      when 3
+      when 4
+      when 5
+        .class2
+      when 6
+      when 7
+      when 8
+        .class3
+      default
+        .class4
+    case mapSelection.get('B')
+      when 0
+      when 1
+        .class0
+      when 2
+        .class1
+      when 3
+      when 4
+      when 5
+        .class2
+      when 6
+      when 7
+      when 8
+        .class3
+      default
+        .class4
+    case mapSelection.get('C')
+      when 0
+      when 1
+        .class0
+      when 2
+        .class1
+      when 3
+      when 4
+      when 5
+        .class2
+      when 6
+      when 7
+      when 8
+        .class3
+      default
+        .class4
+    case mapSelection.get('D')
+      when 0
+      when 1
+        .class0
+      when 2
+        .class1
+      when 3
+      when 4
+      when 5
+        .class2
+      when 6
+      when 7
+      when 8
+        .class3
+      default
+        .class4
+
+  nav 
+    form(action="/clear", method="post")
+      input(type='submit' value='CLEAR' onsubmit="alert('clearing....')" )
+
   script(src="./javascripts/test.js") 
     

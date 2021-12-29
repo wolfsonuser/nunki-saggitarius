@@ -96,5 +96,21 @@ register.pug
 1. Now change to '/simple' which means '/users/simple' get action
 1. When using the Router (uppercase R), redirection need full URL, not just the end of the route used by the Router: example, from Router user.js '/' (which really means '/users') redirect not to '/simple', but to full url even inside the users.js file: '/users/simple'.
 
+## December 29, 2021
+
+1. JS Map() key:value ==> myMap
+  1. myMap.set('A', 1)
+  1. myMap.get('A')
+  1. myMap.keys()
+  1. myMap.values()
+  1. myMap.entries() it is an iterator
+1. JS Set() 
+  1. Unique elements, it does not allow duplicates.
+  1. new Set() 
+  1. let mySet = new Set(["","","","",""])
+  1. mySet.add(value)
+  1. mySet.delete(value)
+  1. mySet.clear()
+  
 
 
