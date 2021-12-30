@@ -111,6 +111,17 @@ register.pug
   1. mySet.add(value)
   1. mySet.delete(value)
   1. mySet.clear()
-  
 
+
+## December 30, 2021
+
+1. Added onClick='takeMeHome()' on the inputForm post 
+1. Added a script tag in inputForm == it did not work (indentation?)
+1. Tried to add takeMeHome in the public/javascript/test.js but not
+1. Tried to add takeMeHome in index.js not yet tested.
+1. As of now: I adds each option and the bars behave as expected in /poll1 route
+1. Added /poll4 route trying to fix the redirection behavior by adding the props passed to formInput.pug but not yet tested
+1. Created new button to clear data and refresh the page but it is not working yet
+1. "CLEAR" button tested and it is working without changing the post action in formInput.pug template.
+1. PLAN: make CLEAR button active under two conditions, onclick and user IP address
 

@@ -7,7 +7,7 @@ block content
   nav
     form(action="/", method="get")
         input(type='submit' value='REFRESH'  )
-    form(action="/poll1", method="post"  )
+    form(action="/poll1", method="post"   )
         input(type="button" value='A' name='a' onclick='countMe("a")')
         input(type="button" value='B' name='b' onclick='countMe("b")')
         input(type="button" value='C' name='c' onclick='countMe("c")')
@@ -24,7 +24,7 @@ block content
             input#ccc(type='radio' name='my_selection' value='C')
             label(for='my_selection') C
           div
-            input#ddd(type='radio' name='my_selection' value='D')
+            input#ddd(type='radio' name='my_selection' value='D' checked)
             label(for='my_selection') D
 
   section
@@ -96,6 +96,5 @@ block content
   nav 
     form(action="/clear", method="post")
       input(type='submit' value='CLEAR' onsubmit="alert('clearing....')" )
-
   script(src="./javascripts/test.js") 
     

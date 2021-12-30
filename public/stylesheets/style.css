@@ -1,9 +1,6 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-nav form {
-    display:block;
-}
 section {
     display: flex;
     justify-content: space-around;
@@ -21,18 +18,6 @@ section div {
 }
 article div {
     border: 3px solid black;
-}
-input[type='button'] {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-color: lightgreen;
-    font-size: 3em;
-}
-input[type='button']:hover {
-    background-color: black;
-    color: white;
-    font-size: 4em;
 }
 .class0,
 .class1,
@@ -90,4 +75,11 @@ input[type='radio'] {
 }
 input[type='button'] {
     display: none;
+}
+input[type='submit'] {
+    width: 90%;
+    height:90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
 }

@@ -141,12 +141,37 @@ router.post('/poll3', function (req, res) {
   }
   console.log(fakeSet);
 
-  //res.send('hit poll3 using post');
-  res.redirect(200, '/');
 })
 
 router.post('/clear', function (req, res) {
   clearFakeData();
   res.redirect(200, '/');
 })
+router.post('/poll4', function (req, res, next) {
+  //res.send('hit poll1 using post');
+  console.log('poll4: ' + req.body.my_selection);
+  selection.push(req.body.my_selection);
+  //let mapSelection = new Map();
+
+  mapSelection.set(req.body.my_selection, (mapSelection.get(req.body.my_selection) + 1));
+  // for (const [key, value] of mapSelection){
+  //   console.log(key + ":" + value);
+  // }
+  console.log(mapSelection.entries());
+
+  for (let i = 0; i < online.length; i++) {
+    fakeSet.add(remoteIp[i]);
+  }
+  fakeSelArray = [9, 2, 0, 4];
+
+  console.log(`poll 1  option: ${req.body.my_selection}  last request: ${remoteIp[remoteIp.length - 1]} ${selection}   `);
+
+  // fire-and-forget
+  res.render('formInput', {
+    title: 'Select Option A,B,C or D', item: listItems(remoteIp),
+    online: online, lastRequest: result, selection: selection, fakeSelArray,
+    mapSelection
+  })
+})
+
 module.exports = router;

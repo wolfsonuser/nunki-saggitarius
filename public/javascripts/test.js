@@ -10,6 +10,10 @@ let hasSelected = false;
 //     }
 // }
 // fillContent();
+//
+function takeMeHome() {
+	window.location.href="http://10.0.0.130:3000"
+}
 function countMe1(){
     return alert('submitting');
 }
