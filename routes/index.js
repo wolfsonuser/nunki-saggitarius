@@ -144,12 +144,27 @@ router.post('/poll3', function (req, res) {
 })
 
 router.post('/clear', function (req, res) {
-  clearFakeData();
-  res.redirect(200, '/');
+  console.log('========== route/index.js line 147');
+  console.log(remoteIp[remoteIp.length - 1]);
+  if (remoteIp[remoteIp.length - 1]  === '::ffff:10.0.0.155'){
+    console.log(` fakeDb = ['Nelson'];
+    fakeSet = new Set();
+    selection = [];
+    fakeSelArray = [];
+    mapSelection.set('A', 0);
+    mapSelection.set('B', 0);
+    mapSelection.set('C', 0);
+    mapSelection.set('D', 0);`)
+    clearFakeData();
+  } else {
+    console.log("Not authorized to clear data....")
+  }
+  //res.redirect(200, '/');
+  res.send("<h1 id='not-auth'><a href='/'>NOT AUTHORIZED TO CLEAR DATA!!!!</a></h1>")
 })
 router.post('/poll4', function (req, res, next) {
-  //res.send('hit poll1 using post');
-  console.log('poll4: ' + req.body.my_selection);
+  
+  console.log('==== 166 poll4: ' + req.body.my_selection);
   selection.push(req.body.my_selection);
   //let mapSelection = new Map();
 
@@ -164,12 +179,12 @@ router.post('/poll4', function (req, res, next) {
   }
   fakeSelArray = [9, 2, 0, 4];
 
-  console.log(`poll 1  option: ${req.body.my_selection}  last request: ${remoteIp[remoteIp.length - 1]} ${selection}   `);
+  console.log(`=== 181 poll 1  option: ${req.body.my_selection}  last request: ${remoteIp[remoteIp.length - 1]} ${selection}   `);
 
   // fire-and-forget
   res.render('formInput', {
     title: 'Select Option A,B,C or D', item: listItems(remoteIp),
-    online: online, lastRequest: result, selection: selection, fakeSelArray,
+    online: online, lastRequest: remoteIp[remoteIp.length-1], selection: selection, fakeSelArray,
     mapSelection
   })
 })

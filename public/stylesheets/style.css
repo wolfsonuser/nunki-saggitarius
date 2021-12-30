@@ -83,3 +83,6 @@ input[type='submit'] {
     margin-right: 5%;
     margin-bottom: 5%;
 }
+#not-auth {
+    padding:20%;
+}

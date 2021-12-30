@@ -125,3 +125,13 @@ register.pug
 1. "CLEAR" button tested and it is working without changing the post action in formInput.pug template.
 1. PLAN: make CLEAR button active under two conditions, onclick and user IP address
 
+## commit code name saggitarius
+
+1. /poll4 route res.render('formInput'.....) with all props except 'result' which works only on get method (getIp()). Instead passed the last item of remoteIp array.
+1. post on /poll4 correctly render the form, no need redirect
+1. /clear: res.send h1 "NOT AUTHORIZED" with a tags to home page ('/')
+1. /clear authorized from 155 only, make sure to add AWS address. 
+1. BUG: to clear it needs to be clicked twice. 
+1. Try tag on saggitarius
+
+
