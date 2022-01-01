@@ -1,5 +1,48 @@
 # Nunki Saggitarius Windows npx express generator
 
+## 01.01.2022
+
+1. created new repository  nunki-saggitarius
+1. copy/paste intructions below
+  1. …or create a new repository on the command line
+  1. echo "# nunki-saggitarius" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:wolfsonuser/nunki-saggitarius.git
+git push -u origin main
+1. copy/paste instructions below OR:
+  1. …or push an existing repository from the command line
+  1. git remote add origin git@github.com:wolfsonuser/nunki-saggitarius.git
+  1. git branch -M main
+  1. git push -u origin main
+
+
+## December 30, 2021
+
+1. Added onClick='takeMeHome()' on the inputForm post 
+1. Added a script tag in inputForm == it did not work (indentation?)
+1. Tried to add takeMeHome in the public/javascript/test.js but not
+1. Tried to add takeMeHome in index.js not yet tested.
+1. As of now: I adds each option and the bars behave as expected in /poll1 route
+1. Added /poll4 route trying to fix the redirection behavior by adding the props passed to formInput.pug but not yet tested
+1. Created new button to clear data and refresh the page but it is not working yet
+1. "CLEAR" button tested and it is working without changing the post action in formInput.pug template.
+1. PLAN: make CLEAR button active under two conditions, onclick and user IP address
+
+## commit code name saggitarius
+
+1. /poll4 route res.render('formInput'.....) with all props except 'result' which works only on get method (getIp()). Instead passed the last item of remoteIp array.
+1. post on /poll4 correctly render the form, no need redirect
+1. /clear: res.send h1 "NOT AUTHORIZED" with a tags to home page ('/')
+1. /clear authorized from 155 only, make sure to add AWS address. 
+1. BUG: to clear it needs to be clicked twice. 
+1. Try tag on saggitarius
+
+## Tag code v1.0.0
+
+
 ## 12.17.2021
 
 ## Audit fix --force because of pug version. Also issues with core-js < 3.3 
@@ -133,5 +176,8 @@ register.pug
 1. /clear authorized from 155 only, make sure to add AWS address. 
 1. BUG: to clear it needs to be clicked twice. 
 1. Try tag on saggitarius
+
+## Tag code v1.0.0
+
 
 
